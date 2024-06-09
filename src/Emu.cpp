@@ -16,14 +16,6 @@ int Emu::emuRun(int argc, char **argv) {
      printf("Usage: emu <rom_file>\n");
      return -1;
  }*/
-  Cartridges card{};
-
-  if (!card.loadCartridges("../roms/superml.gb")) {
-    printf("Failed to load ROM file: %s\n", argv[1]);
-    return -2;
-  }
-
-  printf("Cart loaded..\n");
 
   SDL_Init(SDL_INIT_VIDEO);
   printf("SDL INIT\n");

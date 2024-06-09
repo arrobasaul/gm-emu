@@ -20,7 +20,7 @@ typedef struct {
   Word global_checksum;
 } RomHeader;
 
-class Cartridges {
+class Cartridge {
  private:
   std::map<Byte, std::string> LIC_CODE;
 
@@ -29,7 +29,10 @@ class Cartridges {
   const char *getTypeName();
 
  public:
-  Cartridges();
-  ~Cartridges();
-  bool loadCartridges(char *cart);
+  Cartridge();
+  ~Cartridge();
+  bool loadCartridge(char *cart);
+
+  Byte readCard(Word address);
+  void writeCard(Word address, Byte value);
 };
